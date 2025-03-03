@@ -79,7 +79,9 @@ console.log(millenial);
 
 
 //Hoisting and TDZ in practice
-console.log(me);
+
+
+/*console.log(me);
 // console.log(job);
 // console.log(year);
 
@@ -109,3 +111,153 @@ if(!numProducts) deleteShoppingCart();
  function deleteShoppingCart(){
     console.log('All products deleted!');
  }
+    
+
+
+ var numProducts = 10;
+
+ function deleteShoppingCart(){
+    console.log('All products deleted!');
+ }
+
+ var x = 1;
+ var y = 2;
+ var z = 3;
+
+ console.log(x === window.x);
+ console.log(y === window.y);
+ console.log(z === window.z);
+
+ */
+
+
+ //this keyword
+//  console.log(this);
+
+ /*const calcAge = function (birthYear){
+        console.log(2037 - birthYear);
+        console.log(this);
+ };
+
+ calcAge(1991);
+
+const Jonas = {
+    birthYear: 1991,
+    calcAge: function(){
+        console.log(this);
+        console.log(2037 - this.birthYear);
+    },
+}
+Jonas.calcAge();
+
+
+const matilda = {
+    birthYear: 2017,
+};
+
+matilda.calcAge = Jonas.calcAge;
+matilda.calcAge();
+
+const f = Jonas.calcAge;
+f();
+
+*/
+
+
+//Regular function vs arrow function
+
+/*var firstName = 'Matilda';
+
+const Jonas = {
+     firstName : 'Jonas',
+    birthYear: 1991,
+    calcAge: function(){
+        console.log(this);
+        console.log(2037 - this.birthYear);
+
+        // const self = this;
+
+        // const isMillenial = function(){
+        //     console.log(self);
+        //     console.log(self.birthYear >= 1981 && self.birthYear <= 1996);
+        // };
+        const isMillenial = function(){
+            console.log(self);
+            console.log(self.birthYear >= 1981 && self.birthYear <= 1996);
+        };
+        // console.log(this.birthYear >= 1981 && this.birthYear <= 1996);
+        isMillenial();
+    },
+    greet:() => {
+        console.log(this);
+        console.log(`Hey ${this.firstName}`);
+    },
+};
+
+Jonas.greet();
+Jonas.calcAge();
+
+*/
+
+
+// Object References in Practice (Shallow vs. Deep Copies)
+
+/*const jessica1 = {
+    firstName: 'jessica',
+    lastName: 'williams',
+    age: 27,
+    
+};
+
+function marryPerson(originalPerson, newLastName){
+    originalPerson.lastName = newLastName;
+    return originalPerson;
+}
+
+const marriedJessica = marryPerson(jessica1, 'Davis');
+
+console.log('Before:' , jessica1);
+console.log('After:' , marriedJessica);
+
+
+const jessica = {
+    firstName: 'jessica',
+    lastName: 'williams',
+    age: 27,
+    family: ['Alice', 'Bob']
+};
+
+const jessicaCopy = {...jessica};
+jessicaCopy.lastName = 'Davis';
+
+
+jessicaCopy.family.push("Mary");
+jessicaCopy.family.push("john");
+
+
+console.log('Before:', jessicaCopy);
+console.log('After:', jessica);
+
+
+//shallow copy
+const jessicaCopy = {...jessica};
+jessicaCopy.lastName = 'Davis';
+
+jessicaCopy.family.push('john');
+jessicaCopy.family.push('mary');
+
+console.log('Before:', jessica);
+console.log('After:', jessicaCopy);
+
+//Deep copy/clone
+
+const jessicaClone = structuredClone(jessica);
+jessicaClone.family.push('Mary');
+jessicaClone.family.push('John');
+
+
+console.log('Original:', jessica);
+console.log('Clone', jessicaClone);
+
+*/
+
